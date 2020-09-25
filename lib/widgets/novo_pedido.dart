@@ -32,6 +32,7 @@ class NovoPedido extends StatelessWidget {
                     ),
                   ),
                 ),
+                Text('dia da entrega')
               ],
             ),
             Text('novo pedido'),
