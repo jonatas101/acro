@@ -1,3 +1,4 @@
+import 'package:acro/widgets/date_picker.dart';
 import 'package:flutter/material.dart';
 
 class NovoPedido extends StatelessWidget {
@@ -27,12 +28,15 @@ class NovoPedido extends StatelessWidget {
                   child: TextField(
                     decoration: InputDecoration(
                       border: InputBorder.none,
-                      icon: Icon(Icons.airport_shuttle),
+                      icon: Icon(
+                        Icons.airport_shuttle,
+                        color: Color(0xff0B3669),
+                      ),
                       hintText: 'número do pedido',
                     ),
                   ),
                 ),
-                Text('dia da entrega')
+                Calendar(),
               ],
             ),
             Text('novo pedido'),
