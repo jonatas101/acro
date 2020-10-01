@@ -12,9 +12,10 @@ class _CalendarState extends State<Calendar> {
 
   Future<Null> _selectDate(BuildContext context) async {
     final DateTime picked = await showDatePicker(
+        locale: const Locale('pt', 'BR'),
         context: context,
         initialDate: selectedDate,
-        firstDate: DateTime(2015, 8),
+        firstDate: DateTime(2020, 9),
         lastDate: DateTime(2101));
     if (picked != null && picked != selectedDate)
       setState(() {
