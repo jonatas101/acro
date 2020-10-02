@@ -42,6 +42,19 @@ class NovoPedido extends StatelessWidget {
             Text('novo pedido'),
             Text('novo pedido'),
             Text('novo pedido'),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                FlatButton(
+                    textColor: Colors.blue,
+                    onPressed: () {},
+                    child: Text('save')),
+                FlatButton(
+                    textColor: Colors.blue,
+                    onPressed: () {},
+                    child: Text('add'))
+              ],
+            )
           ],
         ),
       ),
