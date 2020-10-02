@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 
 class Calendar extends StatefulWidget {
   @override
@@ -34,12 +35,12 @@ class _CalendarState extends State<Calendar> {
             child: FlatButton(
               onPressed: () => _selectDate(context),
               child: Text(
-                'Data da entrega',
+                'Dia entrega',
                 style: TextStyle(color: Color(0xff0B3669)),
               ),
             ),
           ),
-          Text("${selectedDate.toLocal()}".split(' ')[0]),
+          Text(DateFormat.yMEd('pt-br').format(selectedDate)),
           SizedBox(
             height: 20.0,
           ),
