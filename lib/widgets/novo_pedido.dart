@@ -1,7 +1,46 @@
-import 'package:acro/widgets/date_picker.dart';
 import 'package:flutter/material.dart';
+import 'dart:html';
 
-class NovoPedido extends StatelessWidget {
+import '../widgets/date_picker.dart';
+import '../widgets/dropdown_itens.dart';
+
+class NovoPedido extends StatefulWidget {
+  @override
+  _NovoPedidoState createState() => _NovoPedidoState();
+}
+
+class _NovoPedidoState extends State<NovoPedido> {
+  Future<void> _novoItem() async {
+    return showDialog<void>(
+        context: context,
+        barrierDismissible: false,
+        builder: (BuildContext context) {
+          return AlertDialog(
+            title: Text('Novo Item'),
+            content: SingleChildScrollView(
+              child: ListBody(
+                children: [
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      ItensDropdown(),
+                    ],
+                  ),
+                ],
+              ),
+            ),
+            actions: [
+              TextButton(
+                child: Text('save'),
+                onPressed: () {
+                  Navigator.of(context).pop();
+                },
+              ),
+            ],
+          );
+        });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -51,7 +90,7 @@ class NovoPedido extends StatelessWidget {
                     child: Text('save')),
                 FlatButton(
                     textColor: Colors.blue,
-                    onPressed: () {},
+                    onPressed: _novoItem,
                     child: Text('add'))
               ],
             )
